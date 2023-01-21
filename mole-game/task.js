@@ -2,16 +2,10 @@ const dead = document.getElementById("dead");
 const lost = document.getElementById("lost");
 console.log(dead);
 console.log(lost);
-let idArray = [];
+let idArray = document.querySelectorAll(".hole");
 
-for (i = 1; i < 9; i++) {
-    idArray.push(`hole${i}`);
-    console.log(idArray);
-}
-
-
-for (id of idArray) {
-    let getHole = document.getElementById(id);
+for (el of idArray) {
+    let getHole = document.getElementById(el.id);
     getHole.onclick = () => {
         if (getHole.className.includes("hole_has-mole")) {
             if (Number(dead.textContent) < 9) {
@@ -32,4 +26,3 @@ for (id of idArray) {
         }
     };
 }
-
